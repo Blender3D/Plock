@@ -3,7 +3,7 @@
 pkgname=plock
 pkgver=1.0.0
 pkgrel=1
-pkgdesc="A clean desktop-independent lockscreen."
+pkgdesc="A clean and desktop-independent lockscreen."
 arch=(i686 x86_64)
 url="http://blender3d.github.com/Plock/"
 license=('GPL')

@@ -1,7 +1,16 @@
 #!/usr/bin/env python2
 
-import sys, os
+import sys, os, fcntl, errno, tempfile
 import getpass
+from multiprocessing import Process
+
+lockfile = os.path.normpath(tempfile.gettempdir() + '/' + os.path.splitext(os.path.abspath(__file__))[0].replace("/","-").replace(":","").replace("\\","-")  + '.lock')
+lockHandle = open(lockfile, 'w')
+
+try:
+  fcntl.lockf(lockHandle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+except IOError:
+  sys.exit(-1)
 
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
@@ -91,11 +100,14 @@ class Ui_MainWindow(object):
     MainWindow.setCentralWidget(self.centralwidget)
 
     MainWindow.setWindowTitle('Lock Screen')
-    self.headerLabel.setText('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><html><head><meta name="qrichtext" content="1" /></head><body><span style="font-size:20pt; font-weight: bold;">The screen has been locked by %username%.</span></body></html>')
+    self.headerLabel.setText('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><html><head><meta name="qrichtext" content="1" /></head><body><span style="font-size:20pt; font-weight: bold;">The screen has been locked by %username%</span></body></html>')
     self.passwordLabel.setText('Enter your password:')
     self.unlockButton.setText('Unlock')
     self.shutdownButton.setText('Shutdown')
     self.rebootButton.setText('Reboot')
+    
+    self.shutdownButton.setEnabled(False)
+    self.rebootButton.setEnabled(False)
 
     QObject.connect(self.passwordTextbox, SIGNAL('returnPressed()'), self.unlockButton.click)
     QMetaObject.connectSlotsByName(MainWindow)
@@ -110,14 +122,25 @@ class StartQT4(QMainWindow):
     self.ui.setupUi(self)
     self.showFullScreen()
     
+    self.setCursor(QCursor(Qt.BlankCursor))
+    
     self.ui.passwordTextbox.grabKeyboard()
     self.ui.passwordTextbox.grabMouse()
     
     self.ui.headerLabel.setText(self.ui.headerLabel.text().replace('%username%', getpass.getuser()))
+    
     self.connect(self.ui.unlockButton, SIGNAL('clicked()'), self.unlock)
+    self.connect(self.ui.shutdownButton, SIGNAL('clicked()'), self.shutdown)
+    self.connect(self.ui.rebootButton, SIGNAL('clicked()'), self.reboot)
   
   def closeEvent(self, event):
     event.ignore()
+  
+  def shutdown(self):
+    os.system('shutdown now')
+  
+  def reboot(self):
+    os.system('reboot')
   
   def unlock(self):
     @CONV_FUNC

@@ -1,7 +1,7 @@
 # Maintainer: Blender3D <>
 
 pkgname=plock
-pkgver=1.0.1
+pkgver=1.0.2
 pkgrel=1
 pkgdesc="A clean and desktop-independent lockscreen."
 arch=(i686 x86_64)

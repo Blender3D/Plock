@@ -124,10 +124,10 @@ class StartQT4(QMainWindow):
     
     self.setCursor(QCursor(Qt.BlankCursor))
     
+    self.ui.headerLabel.setText(self.ui.headerLabel.text().replace('%username%', getpass.getuser()))
+    
     self.ui.passwordTextbox.grabKeyboard()
     self.ui.passwordTextbox.grabMouse()
-    
-    self.ui.headerLabel.setText(self.ui.headerLabel.text().replace('%username%', getpass.getuser()))
     
     self.connect(self.ui.unlockButton, SIGNAL('clicked()'), self.unlock)
     self.connect(self.ui.shutdownButton, SIGNAL('clicked()'), self.shutdown)

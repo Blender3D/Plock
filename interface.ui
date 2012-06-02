@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>707</width>
+    <width>1290</width>
     <height>604</height>
    </rect>
   </property>
@@ -29,7 +29,7 @@
       <property name="sizeHint" stdset="0">
        <size>
         <width>20</width>
-        <height>214</height>
+        <height>5000</height>
        </size>
       </property>
      </spacer>
@@ -41,7 +41,7 @@
       </property>
       <property name="sizeHint" stdset="0">
        <size>
-        <width>117</width>
+        <width>5000</width>
         <height>20</height>
        </size>
       </property>
@@ -250,7 +250,7 @@ QToolButton {
       </property>
       <property name="sizeHint" stdset="0">
        <size>
-        <width>117</width>
+        <width>5000</width>
         <height>20</height>
        </size>
       </property>
@@ -264,7 +264,7 @@ QToolButton {
       <property name="sizeHint" stdset="0">
        <size>
         <width>20</width>
-        <height>213</height>
+        <height>5000</height>
        </size>
       </property>
      </spacer>

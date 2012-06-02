@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'interface.ui'
 #
-# Created: Thu May 10 02:55:11 2012
+# Created: Sat Jun  2 13:20:55 2012
 #      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -17,16 +17,16 @@ except AttributeError:
 class Ui_MainWindow(object):
   def setupUi(self, MainWindow):
     MainWindow.setObjectName(_fromUtf8("MainWindow"))
-    MainWindow.resize(707, 604)
+    MainWindow.resize(1290, 604)
     MainWindow.setMouseTracking(True)
     MainWindow.setAutoFillBackground(True)
     self.centralwidget = QtGui.QWidget(MainWindow)
     self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
     self.gridLayout_2 = QtGui.QGridLayout(self.centralwidget)
     self.gridLayout_2.setObjectName(_fromUtf8("gridLayout_2"))
-    spacerItem = QtGui.QSpacerItem(20, 214, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+    spacerItem = QtGui.QSpacerItem(20, 5000, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
     self.gridLayout_2.addItem(spacerItem, 0, 1, 1, 1)
-    spacerItem1 = QtGui.QSpacerItem(117, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
+    spacerItem1 = QtGui.QSpacerItem(5000, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
     self.gridLayout_2.addItem(spacerItem1, 1, 0, 1, 1)
     self.frame = QtGui.QFrame(self.centralwidget)
     sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Fixed)
@@ -35,6 +35,7 @@ class Ui_MainWindow(object):
     sizePolicy.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
     self.frame.setSizePolicy(sizePolicy)
     self.frame.setMinimumSize(QtCore.QSize(400, 0))
+    self.frame.setMaximumSize(QtCore.QSize(445, 206))
     self.frame.setAutoFillBackground(False)
     self.frame.setStyleSheet(_fromUtf8("#frame {\n"
 "  border: 8px solid palette(highlight);\n"
@@ -106,9 +107,9 @@ class Ui_MainWindow(object):
     self.line.setObjectName(_fromUtf8("line"))
     self.gridLayout.addWidget(self.line, 1, 0, 1, 1)
     self.gridLayout_2.addWidget(self.frame, 1, 1, 1, 1)
-    spacerItem2 = QtGui.QSpacerItem(117, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
+    spacerItem2 = QtGui.QSpacerItem(5000, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
     self.gridLayout_2.addItem(spacerItem2, 1, 2, 1, 1)
-    spacerItem3 = QtGui.QSpacerItem(20, 213, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+    spacerItem3 = QtGui.QSpacerItem(20, 5000, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
     self.gridLayout_2.addItem(spacerItem3, 2, 1, 1, 1)
     MainWindow.setCentralWidget(self.centralwidget)
 

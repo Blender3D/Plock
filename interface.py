@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'interface.ui'
 #
-# Created: Sat Jun  2 13:20:55 2012
+# Created: Sat Jun  2 13:23:05 2012
 #      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -35,7 +35,6 @@ class Ui_MainWindow(object):
     sizePolicy.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
     self.frame.setSizePolicy(sizePolicy)
     self.frame.setMinimumSize(QtCore.QSize(400, 0))
-    self.frame.setMaximumSize(QtCore.QSize(445, 206))
     self.frame.setAutoFillBackground(False)
     self.frame.setStyleSheet(_fromUtf8("#frame {\n"
 "  border: 8px solid palette(highlight);\n"

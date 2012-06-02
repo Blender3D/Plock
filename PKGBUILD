@@ -1,4 +1,4 @@
-# Maintainer: Blender3D <>
+# Maintainer: Blender3D  <>
 
 pkgname=plock
 pkgver=1.0.3
